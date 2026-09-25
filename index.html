@@ -1,0 +1,409 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#061019" id="themeColor">
+<meta name="color-scheme" content="dark">
+<meta name="application-name" content="YAMB">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="description" content="YAMB · Royal Navy Engineering — local-first browser Yamb with AI, team play, P2P multiplayer, history, profiles and offline support.">
+<meta name="robots" content="index,follow">
+<link rel="manifest" href="./manifest.webmanifest">
+<link rel="icon" href="./assets/icons/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="./assets/icons/icon-192.png">
+<link rel="stylesheet" href="./assets/css/app.css">
+<title>YAMB · ROYAL NAVY ENGINEERING</title>
+</head>
+<body>
+<div aria-label="Loading YAMB runtime" aria-live="polite" id="yambBoot" role="status">
+<div class="yamb-boot-instrument">
+<div class="yamb-boot-mark">N.O.I.S.E. HARBOUR · RUNTIME INITIALIZATION</div>
+<div aria-hidden="true" class="yamb-boot-dice"><span class="yamb-boot-die"></span><span class="yamb-boot-die"></span><span class="yamb-boot-die"></span></div>
+<div class="yamb-boot-title">YAMB · Royal Navy Engineering</div>
+<div aria-hidden="true" class="yamb-boot-track"><span></span></div>
+<div class="yamb-boot-sub">calibrating table · restoring runtime · standing by</div>
+</div>
+</div>
+<div id="app">
+<header class="topbar">
+<div class="player-head p1 active" id="p1Head">
+<img alt="Player 1 profile" class="player-avatar" id="p1AvatarTop" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20100%20100%22%3E%0A%3Cdefs%3E%0A%20%3ClinearGradient%20id%3D%22bg%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20stop-color%3D%22%23142a39%22%2F%3E%3Cstop%20offset%3D%22.55%22%20stop-color%3D%22%230b1c28%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23061019%22%2F%3E%3C%2FlinearGradient%3E%0A%20%3ClinearGradient%20id%3D%22sil%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%220%22%20y2%3D%221%22%3E%3Cstop%20stop-color%3D%22%23eef2f3%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23aab8bf%22%2F%3E%3C%2FlinearGradient%3E%0A%3C%2Fdefs%3E%0A%3Crect%20width%3D%22100%22%20height%3D%22100%22%20rx%3D%2210%22%20fill%3D%22url%28%23bg%29%22%2F%3E%0A%3Cpath%20d%3D%22M0%2017L100%200v12L0%2030Z%22%20fill%3D%22%23fff%22%20opacity%3D%22.035%22%2F%3E%0A%3Ccircle%20cx%3D%2250%22%20cy%3D%2236%22%20r%3D%2217%22%20fill%3D%22url%28%23sil%29%22%2F%3E%0A%3Cpath%20d%3D%22M19%2092c2-24%2014-37%2031-37s29%2013%2031%2037%22%20fill%3D%22url%28%23sil%29%22%2F%3E%0A%3Cpath%20d%3D%22M25%2086h50%22%20stroke%3D%22%23d4b663%22%20stroke-width%3D%221.6%22%20opacity%3D%22.46%22%2F%3E%0A%3C%2Fsvg%3E"/>
+<div class="player-copy">
+<div class="player-name" id="p1NameTop">Player 1</div>
+<div class="player-current">TOTAL <b id="p1ScoreTop">0</b></div>
+</div>
+</div>
+<div class="score-center">
+<button aria-label="Open game control" class="game-menu-btn" id="gameMenuBtn" title="Game control" type="button">
+<span aria-hidden="true" class="menu-hamburger"><i></i><i></i><i></i></span>
+<span class="menu-label">MENU</span>
+</button>
+<div aria-hidden="true" class="series-small semaphore-data" hidden="">
+<div class="mini-lights" id="miniLights1"></div>
+<span class="label">FIRST TO 5</span>
+<div class="mini-lights" id="miniLights2"></div>
+</div>
+<span hidden="" id="ratio1">0</span><span hidden="" id="ratio2">0</span>
+</div>
+<button aria-label="Open Mount Yamb solo leaderboard" class="tomb-top-btn" id="tombTopBtn" title="MOUNT YAMB · Summit Ledger" type="button">
+<span aria-hidden="true" class="tomb-ledger-icon"><svg focusable="false" viewbox="0 0 24 24"><path d="M3.2 18.5 9.4 8.2l2.7 4.1 2.1-3.2 6.6 9.4H3.2Z"></path><path d="m7.8 10.9 1.6-2.7 1.8 2.8 1.3-1.9 1.8 2.6"></path><path d="M5.2 18.5h13.6"></path></svg></span><span class="tomb-top-label">MOUNT YAMB</span>
+</button>
+<div class="player-head p2" id="p2Head">
+<div class="player-copy player-copy-right">
+<div class="player-name" id="p2NameTop">Player 2</div>
+<div class="player-current">TOTAL <b id="p2ScoreTop">0</b></div>
+</div>
+<img alt="Player 2 profile" class="player-avatar" id="p2AvatarTop" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20100%20100%22%3E%0A%3Cdefs%3E%0A%20%3ClinearGradient%20id%3D%22bg%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20stop-color%3D%22%23142a39%22%2F%3E%3Cstop%20offset%3D%22.55%22%20stop-color%3D%22%230b1c28%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23061019%22%2F%3E%3C%2FlinearGradient%3E%0A%20%3ClinearGradient%20id%3D%22sil%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%220%22%20y2%3D%221%22%3E%3Cstop%20stop-color%3D%22%23eef2f3%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23aab8bf%22%2F%3E%3C%2FlinearGradient%3E%0A%3C%2Fdefs%3E%0A%3Crect%20width%3D%22100%22%20height%3D%22100%22%20rx%3D%2210%22%20fill%3D%22url%28%23bg%29%22%2F%3E%0A%3Cpath%20d%3D%22M0%2017L100%200v12L0%2030Z%22%20fill%3D%22%23fff%22%20opacity%3D%22.035%22%2F%3E%0A%3Ccircle%20cx%3D%2250%22%20cy%3D%2236%22%20r%3D%2217%22%20fill%3D%22url%28%23sil%29%22%2F%3E%0A%3Cpath%20d%3D%22M19%2092c2-24%2014-37%2031-37s29%2013%2031%2037%22%20fill%3D%22url%28%23sil%29%22%2F%3E%0A%3Cpath%20d%3D%22M25%2086h50%22%20stroke%3D%22%23d4b663%22%20stroke-width%3D%221.6%22%20opacity%3D%22.46%22%2F%3E%0A%3C%2Fsvg%3E"/>
+</div>
+</header>
+<nav class="tabs">
+<button class="tabbtn active" data-tab="activeBoard"><svg aria-hidden="true" class="tab-icon icon-fallback" viewbox="0 0 24 24"><path d="M4 13h4l2-7 4 12 2-5h4"></path></svg><span>RUNTIME</span></button>
+<button class="tabbtn" data-tab="p1Board"><svg aria-hidden="true" class="tab-icon icon-fallback" viewbox="0 0 24 24"><circle cx="12" cy="8" r="3"></circle><path d="M6 20c.8-4 3-6 6-6s5.2 2 6 6"></path></svg><span>PLAYER 1</span></button>
+<button class="tabbtn" data-tab="match"><svg aria-hidden="true" class="tab-icon icon-fallback" viewbox="0 0 24 24"><path d="M8 4h8v4a4 4 0 0 1-8 0V4Z"></path><path d="M8 6H4v2a4 4 0 0 0 4 4M16 6h4v2a4 4 0 0 1-4 4M12 12v5M8 20h8M10 17h4"></path></svg><span>MATCH</span></button>
+<button class="tabbtn" data-tab="p2Board"><svg aria-hidden="true" class="tab-icon icon-fallback" viewbox="0 0 24 24"><circle cx="12" cy="8" r="3"></circle><path d="M6 20c.8-4 3-6 6-6s5.2 2 6 6"></path></svg><span>PLAYER 2</span></button>
+<button class="tabbtn" data-tab="rules"><svg aria-hidden="true" class="tab-icon icon-fallback" viewbox="0 0 24 24"><path d="M4 5.5A3.5 3.5 0 0 1 7.5 2H11v18H7.5A3.5 3.5 0 0 0 4 23V5.5ZM20 5.5A3.5 3.5 0 0 0 16.5 2H13v18h3.5A3.5 3.5 0 0 1 20 23V5.5Z"></path></svg><span>RULES</span></button>
+</nav>
+<main class="stage">
+<section class="view board-view active" id="activeBoard"></section>
+<section class="view board-view" id="p1Board"></section>
+<section class="view board-view" id="p2Board"></section>
+<section class="view match-view" id="match">
+<div class="match-grid">
+<div class="semaphore">
+<div class="semaphore-title" id="semaphoreTitle">SEMAPHORE · FIRST TO 5</div>
+<div class="semaphore-race" id="semaphoreRace">0 : 0</div>
+<div class="sem-lights">
+<div class="sem-side" id="sem1"></div>
+<div class="sem-side" id="sem2"></div>
+</div>
+</div>
+<div class="match-card p1">
+<div aria-label="Player 1 profile" class="match-avatar p1" role="img">P1</div>
+<div class="match-name" id="matchName1">Player 1</div>
+<div class="match-score" id="matchScore1">0</div>
+<div class="match-sub">CURRENT GAME SCORE</div>
+</div>
+<div class="match-card p2">
+<div aria-label="Player 2 profile" class="match-avatar p2" role="img">P2</div>
+<div class="match-name" id="matchName2">Player 2</div>
+<div class="match-score" id="matchScore2">0</div>
+<div class="match-sub">CURRENT GAME SCORE</div>
+</div>
+<section aria-label="Completed game history" class="match-history" id="matchHistory"></section>
+</div>
+</section>
+<section class="view rules-view" id="rules">
+<div class="rules-grid">
+<div class="rule-card">
+<h3><span class="rule-card-icon"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M4 4h4v16H4zM10 4h4v16h-4zM16 4h4v16h-4z"></path><path d="m6 8 1.5 2L9 8M18 16l-1.5-2L15 16"></path></svg></span><span>Columns</span></h3>
+<ul>
+<li><b>↓</b> fills strictly from 1 down to Y.</li>
+<li><b>↕</b> is the free column.</li>
+<li><b>↑</b> fills strictly from Y up to 1.</li>
+<li class="rule-column-semantic"><span aria-hidden="true" data-yamb-column-icon="announce"></span><span><b>Announcement</b> — choose the locked declaration after the first roll; after roll 3 the announced result is written automatically.</span></li>
+<li class="rule-column-semantic"><span aria-hidden="true" data-yamb-column-icon="hand"></span><span><b>Hand</b> — may be scored only after the first roll.</span></li>
+</ul>
+</div>
+<div class="rule-card">
+<h3><span class="rule-card-icon"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M5 5h14M5 9h14M5 13h14M5 17h14M8 3v16M16 3v16"></path></svg></span><span>Rows</span></h3>
+<ul>
+<li><b>1–6</b> record matching dice only: count × face value.</li>
+<li><b>Σ</b> below 1–6 is automatic; a base subtotal of <b>60+</b> receives the <b>+30</b> upper-section bonus.</li>
+<li><b>+</b> records the highest five-dice sum you choose to keep; <b>−</b> records the lowest.</li>
+<li>The difference row is automatic: <b>max(0, (MAX − MIN) × row 1)</b>.</li>
+<li><b>S</b> = Straight, <b>F</b> = Full House, <b>P</b> = Four of a Kind, <b>Y</b> = Yamb.</li>
+<li>The final <b>Σ</b> rows and grand total are calculated by the runtime; they are never manually written.</li>
+</ul>
+</div>
+<div class="rule-card">
+<h3><span class="rule-card-icon"><svg aria-hidden="true" viewbox="0 0 24 24"><rect height="18" rx="1" width="16" x="4" y="3"></rect><path d="M7 7h10M8 11h2M14 11h2M8 15h2M14 15h2M8 19h8"></path></svg></span><span>Scoring</span></h3>
+<ul>
+<li>1–6: matching dice count × face value.</li>
+<li><b>Straight:</b> 66 points on roll 1, 56 on roll 2, 46 on roll 3.</li>
+<li><b>Full House:</b> dice value + 30; <b>Four of a Kind:</b> four matching dice + 40; <b>Yamb:</b> five matching dice + 50.</li>
+<li><b>+</b> and <b>−</b> score the sum of all five dice at the moment of writing.</li>
+<li>Bonuses, section subtotals and the final total are calculated automatically.</li>
+</ul>
+</div>
+<div class="rule-card">
+<h3><span class="rule-card-icon"><svg aria-hidden="true" viewbox="0 0 24 24"><rect height="17" rx="3" width="17" x="3.5" y="3.5"></rect><circle cx="8" cy="8" r="1"></circle><circle cx="16" cy="8" r="1"></circle><circle cx="12" cy="12" r="1"></circle><circle cx="8" cy="16" r="1"></circle><circle cx="16" cy="16" r="1"></circle></svg></span><span>Dice</span></h3>
+<ul>
+<li>Before the first roll, the five dice display Y, A, the crest, M and B in the active blue or red theme, with the action die on the right.</li>
+<li>Dice inherit the active player’s Royal Navy blue or deep red theme, with metallic gold/silver detailing and a clear HELD state.</li>
+<li>Tap a die to hold or release it; tap the action die to start the next roll.</li>
+<li>Each roll uses rotation, bounce and layered impact audio against the wooden tray.</li>
+</ul>
+</div>
+<div class="rule-card">
+<h3><span class="rule-card-icon"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M8 4h8v4a4 4 0 0 1-8 0V4Z"></path><path d="M8 6H4v2a4 4 0 0 0 4 4M16 6h4v2a4 4 0 0 1-4 4M12 12v5M8 20h8M10 17h4"></path></svg></span><span>Match</span></h3>
+<ul>
+<li>The top display always shows the current state of both players.</li>
+<li>The semaphore tracks games won in the series. The first player or team to five wins takes the match.</li>
+<li>The interface theme follows the player or team whose turn is active.</li>
+<li><b>Single · Solo</b> is Player 1 completing one score sheet; <b>Single · Duel</b> plays against Harbour AI; <b>Hotseat · Duel</b> is 1 vs 1 on one device; <b>Hotseat · Team</b> is 2 vs 2 with two teammate sessions per team turn.</li>
+<li><b>Team · TM:</b> each team uses one shared score sheet. Teammate 1 proposes one legal write after a normal up-to-three-roll turn; teammate 2 receives the same fresh chance against the unchanged paper. The team then commits exactly one proposal. If both proposals target the same cell, the higher value is committed automatically.</li>
+<li>Every completed game is archived in <b>Match History</b> with immutable final paper snapshots.</li>
+</ul>
+</div>
+<div class="rule-card online-rule-card">
+<h3><span class="rule-card-icon globe"><svg aria-hidden="true" viewbox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9S14.5 18.4 12 21M12 3c-2.5 2.6-3.8 5.6-3.8 9S9.5 18.4 12 21"></path></svg></span><span>Online · Live P2P</span></h3>
+<ul>
+<li><b>Online supports DUEL, TEAM and CREW:</b> DUEL is 1 vs 1; TEAM is 2 vs 2 with two teammate sessions per team device; CREW assigns A1, A2, B1 and B2 to four independent devices.</li>
+<li><b>Fast join:</b> the host receives a QR code and invite link as soon as the room opens. Scanning the QR opens this app with the room and format preloaded. Manual Room ID entry remains supported.</li>
+<li><b>No cloud game database and no turn-transfer codes are used.</b> PeerJS uses its public PeerServer only to broker the WebRTC connection; after the data channel opens, game state travels directly browser-to-browser.</li>
+<li>Only the browser that owns the current turn may roll, hold dice, announce or confirm a score. The other browser is locked automatically.</li>
+<li>Incoming state is applied only when its revision is newer than the local revision; the local seat assignment is never overwritten.</li>
+<li>If the direct data connection closes, gameplay locks until the connection is restored. Some restrictive networks can require a TURN relay.</li>
+</ul>
+</div>
+</div>
+</section>
+<section aria-label="Mount Yamb Summit Ledger" class="view tomb-view" id="tomb">
+<div class="tomb-scroll-shell">
+<article class="tomb-papyrus">
+<div aria-hidden="true" class="tomb-seal">T·O·M·B</div>
+<header class="tomb-masthead">
+<div class="tomb-overline">OFFICE OF RECREATIONAL ATTRITION · SOLO REGISTER</div>
+<h1><span>T</span>ragic <span>O</span>utcome <span>M</span>onitoring <span>B</span>ureau</h1>
+<h2>Summit Ledger</h2>
+<blockquote>“Official record of heroic climbs, catastrophic descents, and suspiciously lucky summits.”</blockquote>
+</header>
+<div aria-live="polite" class="tomb-ledger" id="tombLedger"></div>
+<footer class="tomb-footnote">LOCAL SUMMIT ARCHIVE · THIS BROWSER · SOLO COMPLETIONS ONLY</footer>
+</article>
+</div>
+</section>
+</main>
+<section class="dice-dock">
+<div class="dice-rail">
+<div class="dice-bank" id="diceBank"></div>
+<button aria-label="Roll dice" class="roll-cup" id="rollCup" title="Roll dice">
+<span aria-hidden="true" class="die-face-flat action-die-face">
+<svg class="dice-cup-mark" focusable="false" viewbox="0 0 64 64">
+<path class="cup-rim" d="M16 18h32M20 14h24"></path>
+<path class="cup-body" d="M19 20h26l-4 28H23l-4-28Z"></path>
+<path class="cup-band" d="M22 29h20M24 42h16"></path>
+</svg>
+</span>
+<span class="roll-num" id="cupRollNo">1</span>
+</button>
+</div>
+<div class="team-turn-panel" hidden="" id="teamTurnPanel"></div><div class="dock-info" id="dockInfo">TAP DIE = HOLD · CUP DIE = ROLL</div>
+</section>
+</div>
+<div class="modal" id="setupModal">
+<div class="modal-card">
+<button aria-label="Close game control" class="modal-close" id="menuCloseBtn" type="button"><svg aria-hidden="true" class="close-mark" viewbox="0 0 24 24"><path d="M6.5 6.5 17.5 17.5M17.5 6.5 6.5 17.5"></path></svg></button>
+<div class="modal-head">
+<div class="modal-eyebrow">GAME CONTROL · MAIN CONTROL</div>
+<h2>Choose Game Type</h2>
+<p>One ruleset. Three play modes. Online rooms connect automatically after one invite link.</p>
+</div>
+<div class="modal-body">
+<div class="control-status" id="controlStatus">
+<div><span>MODE</span><b id="controlModeLabel">HOTSEAT</b></div>
+<div><span>GAME</span><b id="controlGameLabel">G1</b></div>
+<div><span>STATE</span><b id="controlStateLabel">READY</b></div>
+</div>
+<div aria-label="Game type" class="mode-tabs" role="tablist">
+<button class="mode-tab" data-mode-tab="single" type="button"><svg aria-hidden="true" class="mode-icon" viewbox="0 0 24 24"><circle cx="12" cy="8" r="3.2"></circle><path d="M5.5 20c.8-4.2 3-6.2 6.5-6.2S17.7 15.8 18.5 20"></path></svg><span class="mode-copy"><strong>SINGLE</strong><span>LOCAL · SOLO / DUEL</span></span></button>
+<button class="mode-tab active" data-mode-tab="hotseat" type="button"><svg aria-hidden="true" class="mode-icon" viewbox="0 0 24 24"><circle cx="8" cy="8" r="2.7"></circle><circle cx="16" cy="8" r="2.7"></circle><path d="M3.5 19c.5-3.5 2-5.2 4.5-5.2 1.7 0 2.9.7 4 2.1 1.1-1.4 2.4-2.1 4-2.1 2.5 0 4 1.7 4.5 5.2"></path></svg><span class="mode-copy"><strong>HOTSEAT</strong><span>LOCAL · DUEL / TEAM</span></span></button>
+<button class="mode-tab" data-mode-tab="online" type="button"><svg aria-hidden="true" class="mode-icon" viewbox="0 0 24 24"><circle cx="12" cy="12" r="8"></circle><path d="M4 12h16M12 4c2.5 2.2 3.7 4.8 3.7 8S14.5 17.8 12 20M12 4c-2.5 2.2-3.7 4.8-3.7 8S9.5 17.8 12 20"></path></svg><span class="mode-copy"><strong>ONLINE</strong><span>LIVE P2P · DUEL / TEAM</span></span></button>
+</div>
+<section class="mode-panel" data-mode-panel="single">
+<h3>LOCAL · SINGLE</h3>
+<p>Private local play. Select SOLO or DUEL against Harbour AI.</p>
+<div class="fields">
+<div class="field"><label>PLAYER</label><input id="setupSoloName" maxlength="24" placeholder="Player 1"/></div>
+</div>
+<div aria-label="Single game format" class="variant-card-grid" role="radiogroup">
+<button aria-checked="true" class="variant-card selected" data-variant-card="solo" id="startSoloBtn" role="radio" type="button">
+<span class="variant-mark"><span class="variant-icon"><svg aria-hidden="true" viewbox="0 0 24 24"><circle cx="12" cy="8" r="3.2"></circle><path d="M5.2 20c.8-4.4 3.1-6.4 6.8-6.4s6 2 6.8 6.4"></path></svg></span><span class="variant-code">LSO</span></span>
+<span class="variant-copy"><span class="variant-title">LOCAL · SOLO</span><span class="variant-meta">1 PLAYER · 1 SHEET</span><span class="variant-topology">NO OPPONENT</span></span>
+</button>
+<button aria-checked="false" class="variant-card" data-variant-card="ai" id="startSingleBtn" role="radio" type="button">
+<span class="variant-mark"><span class="variant-icon"><svg aria-hidden="true" viewbox="0 0 24 24"><rect height="12" width="14" x="5" y="6"></rect><circle class="solid" cx="9.5" cy="11" r="1"></circle><circle class="solid" cx="14.5" cy="11" r="1"></circle><path d="M9 15h6M12 3v3M3 10h2M19 10h2"></path></svg></span><span class="variant-code">LAI</span></span>
+<span class="variant-copy"><span class="variant-title">LOCAL · DUEL</span><span class="variant-meta">PLAYER · HARBOUR AI</span><span class="variant-topology">1 VS 1</span></span>
+</button>
+</div>
+<div class="modal-actions variant-start-row"><button class="btn primary variant-start-btn" id="singleVariantStartBtn" type="button"><svg aria-hidden="true" class="btn-icon" viewbox="0 0 24 24"><path d="M8 5.5 18 12 8 18.5Z"></path></svg><span>START SOLO</span><small>LSO</small></button></div>
+</section>
+<section class="mode-panel active" data-mode-panel="hotseat">
+<h3>LOCAL · HOTSEAT</h3>
+<p>Shared-device local play. Select DUEL or TEAM topology.</p>
+<div class="fields">
+<div class="field"><label id="setupP1Label">PLAYER 1</label><input id="setupP1" maxlength="24" placeholder="Player 1"/></div>
+<div class="field"><label id="setupP2Label">PLAYER 2</label><input id="setupP2" maxlength="24" placeholder="Player 2"/></div>
+</div>
+<div aria-label="Hotseat game format" class="variant-card-grid" role="radiogroup">
+<button aria-checked="true" class="variant-card selected" data-variant-card="duel" id="hotseatDuelCard" role="radio" type="button">
+<span class="variant-mark"><span class="variant-icon"><svg aria-hidden="true" viewbox="0 0 24 24"><circle cx="8" cy="8" r="2.7"></circle><circle cx="16" cy="8" r="2.7"></circle><path d="M3.5 19c.5-3.5 2-5.2 4.5-5.2M20.5 19c-.5-3.5-2-5.2-4.5-5.2"></path></svg></span><span class="variant-code">LDU</span></span>
+<span class="variant-copy"><span class="variant-title">LOCAL · DUEL</span><span class="variant-meta">2 PLAYERS · 1 VS 1</span><span class="variant-topology">SAME DEVICE</span></span>
+</button>
+<button aria-checked="false" class="variant-card" data-variant-card="team" id="hotseatTeamCard" role="radio" type="button">
+<span class="variant-mark"><span class="variant-icon"><svg aria-hidden="true" viewbox="0 0 24 24"><circle cx="7" cy="7" r="2"></circle><circle cx="17" cy="7" r="2"></circle><circle cx="7" cy="16" r="2"></circle><circle cx="17" cy="16" r="2"></circle><path d="M9 7h6M9 16h6M7 9v5M17 9v5"></path></svg></span><span class="variant-code">LTM</span></span>
+<span class="variant-copy"><span class="variant-title">LOCAL · TEAM</span><span class="variant-meta">4 PLAYERS · 2 VS 2</span><span class="variant-topology">SAME DEVICE</span></span>
+</button>
+</div>
+<div class="modal-actions variant-start-row"><button class="btn primary variant-start-btn" id="startBtn" type="button"><svg aria-hidden="true" class="btn-icon" viewbox="0 0 24 24"><path d="M8 5.5 18 12 8 18.5Z"></path></svg><span>START DUEL</span><small>LDU</small></button></div>
+</section>
+<section class="mode-panel" data-mode-panel="online">
+<h3 class="section-title-icon"><span class="section-title-icon-mark"><svg aria-hidden="true" viewbox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9S14.5 18.4 12 21M12 3c-2.5 2.6-3.8 5.6-3.8 9S9.5 18.4 12 21"></path></svg></span><span>Online · Live P2P</span></h3>
+<p>Choose DUEL, TEAM, or CREW. Create or join one live PeerJS room; QR join and manual Room ID work in parallel.</p>
+<div aria-label="Online game format" class="variant-card-grid online-variant-grid" role="radiogroup">
+<button aria-checked="true" class="variant-card selected" data-online-variant="duel" id="onlineDuelCard" role="radio" type="button">
+<span class="variant-mark"><span class="variant-icon"><svg aria-hidden="true" viewbox="0 0 24 24"><circle cx="8" cy="8" r="2.7"></circle><circle cx="16" cy="8" r="2.7"></circle><path d="M3.5 19c.5-3.5 2-5.2 4.5-5.2M20.5 19c-.5-3.5-2-5.2-4.5-5.2"></path><path d="M10 8h4"></path></svg></span><span class="variant-code">ODU</span></span>
+<span class="variant-copy"><span class="variant-title">ONLINE · DUEL</span><span class="variant-meta">2 PLAYERS · 1 VS 1</span><span class="variant-topology">LIVE P2P</span></span>
+</button>
+<button aria-checked="false" class="variant-card" data-online-variant="team" id="onlineTeamCard" role="radio" type="button">
+<span class="variant-mark"><span class="variant-icon"><svg aria-hidden="true" viewbox="0 0 24 24"><circle cx="7" cy="7" r="2"></circle><circle cx="17" cy="7" r="2"></circle><circle cx="7" cy="16" r="2"></circle><circle cx="17" cy="16" r="2"></circle><path d="M9 7h6M9 16h6M7 9v5M17 9v5"></path></svg></span><span class="variant-code">OTM</span></span>
+<span class="variant-copy"><span class="variant-title">ONLINE · TEAM</span><span class="variant-meta">4 PLAYERS · 2 VS 2</span><span class="variant-topology">2 TEAM DEVICES</span></span>
+</button>
+<button aria-checked="false" class="variant-card" data-online-variant="crew" id="onlineCrewCard" role="radio" type="button">
+<span class="variant-mark"><span class="variant-icon"><svg aria-hidden="true" viewbox="0 0 24 24"><circle cx="6" cy="6" r="2"></circle><circle cx="18" cy="6" r="2"></circle><circle cx="6" cy="18" r="2"></circle><circle cx="18" cy="18" r="2"></circle><path d="M8 6h8M8 18h8M6 8v8M18 8v8M9 9l6 6M15 9l-6 6"></path></svg></span><span class="variant-code">OCR</span></span>
+<span class="variant-copy"><span class="variant-title">ONLINE · CREW</span><span class="variant-meta">4 PLAYERS · 4 DEVICES</span><span class="variant-topology">A1 · A2 · B1 · B2</span></span>
+</button>
+</div>
+<div class="online-flow-line"><b>CREATE</b><span>→</span><b>SCAN / SHARE</b><span>→</span><b>CONNECT</b><span>→</span><b>PLAY</b></div>
+<div class="online-p2p-grid">
+<section class="online-p2p-card host-card">
+<div class="online-section-label">01 · HOST</div>
+<div class="field"><label id="onlineP1Label">PLAYER 1</label><input id="onlineP1" maxlength="24" placeholder="Player 1"/></div>
+<button class="btn primary online-main-action" id="onlineCreateBtn" type="button"><svg aria-hidden="true" class="btn-icon" viewbox="0 0 24 24"><path d="M6 17.5A4.5 4.5 0 0 1 7.5 8.8 5.5 5.5 0 0 1 18 10.5 3.5 3.5 0 0 1 17.5 17.5Z"></path><path d="M12 10v6M9 13h6"></path></svg><span>CREATE ROOM</span></button>
+<div class="p2p-room-readout"><span>ROOM ID</span><b id="onlineRoomReadout">—</b></div>
+<div class="online-actions online-actions-secondary">
+<button class="tool-action" id="onlineCopyBtn" type="button"><svg aria-hidden="true" class="btn-icon" viewbox="0 0 24 24"><rect height="10" rx="1" width="10" x="8" y="8"></rect><path d="M6 15H4V4h11v2"></path></svg><span>COPY ID</span></button>
+<button class="tool-action" id="onlineShareBtn" type="button"><svg aria-hidden="true" class="btn-icon" viewbox="0 0 24 24"><circle cx="6" cy="12" r="2"></circle><circle cx="17" cy="6" r="2"></circle><circle cx="17" cy="18" r="2"></circle><path d="m8 11 7-4M8 13l7 4"></path></svg><span>SHARE LINK</span></button>
+</div>
+</section>
+<section class="online-p2p-card join-card">
+<div class="online-section-label">02 · JOIN</div>
+<div class="field"><label id="onlineP2Label">PLAYER 2</label><input id="onlineP2" maxlength="24" placeholder="Player 2"/></div>
+<div class="field"><label>ROOM ID</label><input autocomplete="off" class="online-code room-input" id="onlineCodeInput" placeholder="Paste Room ID" spellcheck="false" type="text"/></div>
+<button class="btn online-main-action" id="onlineJoinBtn" type="button"><svg aria-hidden="true" class="btn-icon" viewbox="0 0 24 24"><path d="M13 5h6v14h-6M5 12h10M11 8l4 4-4 4"></path></svg><span>JOIN ROOM</span></button>
+</section>
+</div>
+<button aria-hidden="true" hidden="" id="onlineAutoBtn" type="button"></button>
+<div class="online-p2p-tools">
+<button class="tool-action" id="onlineRefreshBtn" type="button"><svg aria-hidden="true" class="btn-icon" viewbox="0 0 24 24"><path d="M18 8a7 7 0 1 0 .5 7M18 4v4h-4"></path></svg><span>RECONNECT</span></button>
+</div>
+<div class="online-status" id="onlineStatus">PeerJS ready · choose a format, create a room, or join by Room ID.</div>
+</section>
+<div class="modal-actions game-control-actions">
+<button class="btn" id="resumeBtn" type="button"><svg aria-hidden="true" class="btn-icon" viewbox="0 0 24 24"><path d="M5 12h12M13 8l4 4-4 4"></path></svg><span>CONTINUE GAME</span></button>
+<button class="btn danger" id="menuResetBtn" type="button"><svg aria-hidden="true" class="btn-icon" viewbox="0 0 24 24"><path d="M5 8V4m0 0h4M5 4l3 3a7 7 0 1 1-1.2 8.6"></path></svg><span>RESET MATCH</span></button>
+</div>
+<div class="control-tools">
+<button class="tool-action" data-icon-name="download" id="importBtn" type="button"><svg aria-hidden="true" class="btn-icon" viewbox="0 0 24 24"><path d="M12 4v11M8 11l4 4 4-4M5 17v2h14v-2"></path></svg><span>IMPORT</span></button>
+<button class="tool-action" id="printBtn" type="button"><svg aria-hidden="true" class="btn-icon" viewbox="0 0 24 24"><path d="M7 9V4h10v5M7 17H5V10h14v7h-2M7 14h10v6H7Z"></path><circle class="solid" cx="17" cy="12" r=".7"></circle></svg><span>PRINT</span></button>
+<button class="tool-action" data-icon-name="upload" id="exportBtn" type="button"><svg aria-hidden="true" class="btn-icon" viewbox="0 0 24 24"><path d="M12 15V4M8 8l4-4 4 4M5 13v6h14v-6"></path></svg><span>EXPORT</span></button>
+</div>
+<input accept="application/json,.json,.yamb" hidden="" id="importFileInput" type="file"/>
+<div class="modal-provision">PROVISIONED BY N.O.I.S.E. HARBOUR · REALITY REMAINS THE ACCEPTANCE TEST. · YESHUA IS LORD.</div>
+</div>
+</div>
+</div>
+<div aria-hidden="true" class="modal online-lobby-modal" id="onlineLobbyModal">
+<div aria-labelledby="onlineLobbyTitle" aria-modal="true" class="modal-card online-lobby-card" role="dialog">
+<button aria-label="Dispose live P2P room" class="modal-close" id="onlineLobbyCloseBtn" title="Dispose live P2P room" type="button"><svg aria-hidden="true" class="modal-close-icon icon-fallback" viewbox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"></path></svg></button>
+<div class="modal-head online-lobby-head">
+<div class="modal-eyebrow">ONLINE · LIVE P2P</div>
+<h2 id="onlineLobbyTitle">Room Ready</h2>
+<p id="onlineLobbySubtitle">Send the Room ID once. The game starts when Player 2 connects.</p>
+</div>
+<div class="modal-body online-lobby-body">
+<div class="lobby-qr-zone" id="onlineLobbyQrZone">
+<div aria-label="QR code to join online room" class="lobby-qr" id="onlineLobbyQr"></div>
+<div class="lobby-qr-copy"><b>SCAN TO JOIN</b><span>Open this Yamb build on the invited device and connect directly to the room.</span><small id="onlineLobbyQrHint">QR + invite link · manual Room ID remains available</small></div>
+</div>
+<div class="lobby-room-id"><span>ROOM ID</span><b id="onlineLobbyRoom">—</b></div>
+<div class="lobby-invite-group" id="onlineLobbyInviteGroup">
+<label for="onlineLobbyInvite">INVITE LINK</label>
+<div class="lobby-invite-row">
+<input id="onlineLobbyInvite" readonly="" spellcheck="false" type="text" value=""/>
+<button class="tool-action" id="onlineLobbyCopyBtn" type="button"><span>COPY LINK</span></button>
+<button class="tool-action" id="onlineLobbyShareBtn" type="button"><span>SHARE</span></button>
+</div>
+</div>
+<div class="lobby-presence-grid">
+<div class="lobby-presence online" id="onlineLobbyP1"><span class="presence-light"></span><div><b>PLAYER 1</b><small>ONLINE</small></div></div>
+<div class="lobby-presence waiting" id="onlineLobbyP2"><span class="presence-light"></span><div><b>PLAYER 2</b><small>WAITING</small></div></div>
+</div>
+<div class="lobby-status" id="onlineLobbyStatus">Waiting for Player 2 to join with the Room ID…</div>
+<button class="btn lobby-cancel" id="onlineLobbyCancelBtn" type="button">CANCEL / LEAVE ROOM</button>
+</div>
+</div>
+</div>
+<div aria-hidden="true" class="modal" id="scoreConfirmModal">
+<div aria-labelledby="scoreConfirmTitle" aria-modal="true" class="modal-card score-confirm-card" role="dialog">
+<button aria-label="Close confirmation" class="modal-close" id="scoreConfirmCloseBtn" type="button"><svg aria-hidden="true" class="modal-close-icon icon-fallback" viewbox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"></path></svg></button>
+<div class="modal-head">
+<div class="modal-eyebrow">SAFETY CHECK · SCORE ENTRY</div>
+<h2 id="scoreConfirmTitle">Confirm Score</h2>
+<p>The result will not be saved until you explicitly confirm it.</p>
+</div>
+<div class="modal-body score-confirm-body">
+<div class="score-confirm-grid">
+<div class="score-confirm-item"><span>Player</span><b id="confirmPlayer">—</b></div>
+<div class="score-confirm-item"><span>Column</span><b id="confirmColumn">—</b></div>
+<div class="score-confirm-item"><span>Category</span><b id="confirmCategory">—</b></div>
+<div class="score-confirm-item"><span>Roll</span><b id="confirmRoll">—</b></div>
+<div class="score-confirm-item score-confirm-points"><span>Points</span><b id="confirmPoints">—</b></div>
+</div>
+<p class="score-confirm-warning" id="scoreConfirmWarning">Review the details before the score is permanently recorded.</p>
+<div class="modal-actions score-confirm-actions">
+<button class="btn" id="cancelScoreBtn" type="button"><svg aria-hidden="true" class="btn-icon icon-fallback" viewbox="0 0 24 24"><circle cx="12" cy="12" r="8"></circle><path d="M9 9l6 6M15 9l-6 6"></path></svg><span>CANCEL</span></button>
+<button class="btn primary" id="confirmScoreBtn" type="button"><svg aria-hidden="true" class="btn-icon icon-fallback" viewbox="0 0 24 24"><path d="M5 12l4 4 10-10"></path></svg><span>CONFIRM SCORE</span></button>
+</div>
+</div>
+</div>
+</div>
+<div aria-hidden="true" class="modal" id="teamDecisionModal">
+<div aria-labelledby="teamDecisionTitle" aria-modal="true" class="modal-card team-choice-modal-card" role="dialog">
+<button aria-label="Close team decision" class="modal-close team-decision-dispose" id="teamDecisionCloseBtn" title="Close team decision" type="button"><svg aria-hidden="true" class="modal-close-icon icon-fallback" viewbox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"></path></svg></button>
+<div class="modal-head">
+<div class="modal-eyebrow">TEAM DECISION · TWO CHANCES COMPLETE</div>
+<h2 id="teamDecisionTitle">Choose Final Proposal</h2>
+<p id="teamDecisionSubtitle">Nothing is on paper yet. Choose which teammate proposal becomes the team score.</p>
+</div>
+<div class="modal-body">
+<div class="team-choice-summary">Both teammate sessions are complete. Select A1/A2 or B1/B2 below. The selected proposal then receives one final confirmation before it is written to the paper.</div>
+<div class="team-choice-modal-grid" id="teamDecisionChoices"></div>
+</div>
+</div>
+</div>
+<div aria-hidden="true" class="modal auto-handoff-modal" id="switchModal">
+<div aria-atomic="true" aria-live="polite" class="modal-card auto-handoff-card" role="status">
+<div class="pass-body">
+<div aria-hidden="true" class="pass-icon handoff-countdown"><span id="switchCountdown">3</span></div>
+<div class="modal-eyebrow" id="switchEyebrow">TURN HANDOFF · NEXT PLAYER</div>
+<h2 id="switchTitle">Player 2 · ready</h2>
+<p id="switchText">Pass the device. The next turn starts automatically.</p>
+<div aria-hidden="true" class="handoff-progress"><span id="switchProgress"></span></div>
+<div class="handoff-hint" id="switchHint">NO ACTION NEEDED · TURN STARTS AUTOMATICALLY</div>
+</div>
+</div>
+</div>
+<div class="modal" id="roundModal">
+<div class="modal-card">
+<button aria-label="Dismiss game result" class="modal-close" id="roundCloseBtn" type="button"><svg aria-hidden="true" class="modal-close-icon icon-fallback" viewbox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"></path></svg></button>
+<div class="modal-head">
+<div class="modal-eyebrow">GAME COMPLETE · SCORE RECORDED</div><h2 id="roundTitle">Game Winner</h2>
+<p id="roundDesc">The game is complete.</p>
+</div>
+<div class="modal-body modal-body-center">
+<div class="round-score" id="roundScore"></div>
+<div class="winner-lights" id="roundLights"></div>
+<div class="modal-actions">
+<button class="btn primary" id="nextGameBtn"><svg aria-hidden="true" class="btn-icon" viewbox="0 0 24 24"><path d="M5 12h12M13 8l4 4-4 4"></path></svg><span>NEXT GAME</span></button>
+<button class="btn danger" id="resetSeriesBtn"><svg aria-hidden="true" class="btn-icon" viewbox="0 0 24 24"><path d="M5 8V4m0 0h4M5 4l3 3a7 7 0 1 1-1.2 8.6"></path></svg><span>RESET MATCH</span></button>
+</div>
+</div>
+</div>
+</div>
+<div aria-hidden="true" id="printArea"></div>
+<script type="module" src="./assets/js/bootstrap.js"></script>
+</body>
+</html>

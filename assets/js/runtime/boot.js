@@ -1,0 +1,2 @@
+
+(()=>{const boot=document.getElementById('yambBoot');if(!boot)return;const born=performance.now();let done=false;const release=()=>{if(done)return;done=true;const wait=Math.max(0,720-(performance.now()-born));setTimeout(()=>{boot.classList.add('boot-release');setTimeout(()=>boot.remove(),520)},wait)};if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',release,{once:true});else release();window.addEventListener('load',release,{once:true});setTimeout(release,2200);boot.addEventListener('pointerdown',release,{once:true});})();

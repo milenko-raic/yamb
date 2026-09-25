@@ -1,0 +1,179 @@
+{
+  "product": "YAMB · Royal Navy Engineering",
+  "release": "1.0.0",
+  "stateSchema": 1,
+  "p2pProtocol": 1,
+  "generatedAt": "2026-09-26T00:27:00+02:00",
+  "files": [
+    {
+      "path": ".github/workflows/pages.yml",
+      "bytes": 1152,
+      "sha256": "571f0f7f970705ba2b65bf24af4ef0eb419ca9a3b336e7a586e4e46155de2b66"
+    },
+    {
+      "path": ".nojekyll",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "ARCHITECTURE.md",
+      "bytes": 4389,
+      "sha256": "ba87ad33daea5c4094c6c3687d44f96a0bc85fee9c13978c5fb3245c9f3bc58a"
+    },
+    {
+      "path": "README.md",
+      "bytes": 2942,
+      "sha256": "e9eb3036ec50cbf9ca35a996cf29b709e452297d0a31b30330f54ed69b87c423"
+    },
+    {
+      "path": "SECURITY.md",
+      "bytes": 1540,
+      "sha256": "2147cdbc0ff38b56d0ae637498b16480a2dc386965711793337b48192dd715e3"
+    },
+    {
+      "path": "THIRD_PARTY_NOTICES.md",
+      "bytes": 371,
+      "sha256": "80ae9dac2721ea37427c3f002c51497ae72b2c60c17901a4046a64cbafffd80f"
+    },
+    {
+      "path": "assets/css/app.css",
+      "bytes": 370483,
+      "sha256": "68465669096c8ea83adfb90787897222a6c77dbb323e11624a40956952b006f8"
+    },
+    {
+      "path": "assets/icons/icon-192.png",
+      "bytes": 1252,
+      "sha256": "b425d220d55c8e5640be3181a634bdb25c190bea60df9fd8fd9557c86152c3fe"
+    },
+    {
+      "path": "assets/icons/icon-512.png",
+      "bytes": 3618,
+      "sha256": "5c752df65b86755696181f71c19d6a11309a560cbb288d313ae762bdb51ffd1f"
+    },
+    {
+      "path": "assets/icons/icon.svg",
+      "bytes": 789,
+      "sha256": "cedaa4944febaf635f0db04b5b889885aacb692256d3a016541877f93abfbd71"
+    },
+    {
+      "path": "assets/js/bootstrap.js",
+      "bytes": 1595,
+      "sha256": "ca305cf08dd3b63da8f418800659a8995f3f62e6fbaa8ec3d128490e21304637"
+    },
+    {
+      "path": "assets/js/core/i18n.js",
+      "bytes": 1560,
+      "sha256": "2213aab72c69c61439a111dfd18c473dc729238015d9395b9d6303bdcefc6080"
+    },
+    {
+      "path": "assets/js/core/pwa.js",
+      "bytes": 830,
+      "sha256": "70cb80a1196aeec3815a9465904cfa31fdc6c9cd3d665b950a06776b71869d51"
+    },
+    {
+      "path": "assets/js/core/random.js",
+      "bytes": 1194,
+      "sha256": "000199c4c7837fe2565112e62716de0efe8d4f1b4a6ca0bf95676cfbe0bd85e0"
+    },
+    {
+      "path": "assets/js/core/rules.js",
+      "bytes": 1268,
+      "sha256": "2b2ef83bef1931784a733734e15b20b3d3b5c939827361a8cbf121344b966b26"
+    },
+    {
+      "path": "assets/js/core/storage.js",
+      "bytes": 5375,
+      "sha256": "84ee60609a545293b45cf87853fe960168e93aea280893f4d38884fa8214f5d0"
+    },
+    {
+      "path": "assets/js/core/telemetry.js",
+      "bytes": 657,
+      "sha256": "44b9acca3218949e32c01a8469fcd5cc2e22fea4bfe6437088898f27c0939893"
+    },
+    {
+      "path": "assets/js/runtime/app.js",
+      "bytes": 160302,
+      "sha256": "76815e1b99e217c45dcbd5a450e0759fdd6d2a4bbd1d8ed784a4106bbc68f043"
+    },
+    {
+      "path": "assets/js/runtime/boot.js",
+      "bytes": 559,
+      "sha256": "3edcfe1b64d21e9d268263c796bd76166eeb6018f44d3a4a9fa9646de270dbc8"
+    },
+    {
+      "path": "assets/js/runtime/deps.js",
+      "bytes": 1865,
+      "sha256": "9baece4996112876258426119782514ee9b1c20b86aa2aaf679999224ac5b273"
+    },
+    {
+      "path": "assets/js/runtime/features.js",
+      "bytes": 17565,
+      "sha256": "a00280541d935be7ab773686fce653b7d1ab0c815551e58fcf33ec44bb428768"
+    },
+    {
+      "path": "assets/js/runtime/hardening.js",
+      "bytes": 471,
+      "sha256": "99f9ebd52ae11e1892b7c4bc628c4d4d0e5c06c51c2833f48a6c2763ac531440"
+    },
+    {
+      "path": "assets/js/runtime/platform.js",
+      "bytes": 17168,
+      "sha256": "8ca09b371a0b363cb3352130e78a79ae3625a549f8261e819fdc27122d1c5353"
+    },
+    {
+      "path": "index.html",
+      "bytes": 35122,
+      "sha256": "b4da469b0d55bbe752508416691ba0f9111d68a23fb45ce837087650a14aecbc"
+    },
+    {
+      "path": "manifest.webmanifest",
+      "bytes": 570,
+      "sha256": "01da7bf3c967ffa72fffaaf48dea3326ac47004f70e68dc638a7b966eafb5855"
+    },
+    {
+      "path": "package.json",
+      "bytes": 359,
+      "sha256": "7fdd85c4c3ed0405176489be2a00a6a21e01261f3d84a42d8e41cfdcb4f6a537"
+    },
+    {
+      "path": "robots.txt",
+      "bytes": 23,
+      "sha256": "16ceb5ee3e0dc13aa9adf31a3ebbe45a1d965b8c2b9f72eaf84e5911e140ed95"
+    },
+    {
+      "path": "sw.js",
+      "bytes": 1958,
+      "sha256": "6678079cdac304d923fdd0d6907a48655738dcdb8cbc98b4903b6b3121e179ac"
+    },
+    {
+      "path": "tests/integrity.test.mjs",
+      "bytes": 1645,
+      "sha256": "7bcaa796ffcae01de9b6ffb67c022cdf62acbb648ef9461d909dacc1621a8715"
+    },
+    {
+      "path": "tests/package.test.mjs",
+      "bytes": 2782,
+      "sha256": "6a8ae98f11607ed98e8a1df9e721480a3ee06d7f2e288d34b6d7f63b40a765f9"
+    },
+    {
+      "path": "tests/random.test.mjs",
+      "bytes": 361,
+      "sha256": "373014672910f9a9096b8db3a37d5ed1d36192ab5fe102df6675004577b50d09"
+    },
+    {
+      "path": "tests/rules.test.mjs",
+      "bytes": 1148,
+      "sha256": "b04bd1f5f6d0434166422d536eb2ac04c877732f53590ba4bd637d84d2fc2fd5"
+    },
+    {
+      "path": "tests/storage.test.mjs",
+      "bytes": 953,
+      "sha256": "105e611ca7c4ba4ac958c21e77df41fc4ea05c81cd7a220f28c449c0ddc2cbad"
+    },
+    {
+      "path": "tests/syntax.test.mjs",
+      "bytes": 862,
+      "sha256": "d9e65cdbc1ef0cf315cf0d2289c54a1e3c6d19b5c069b0f6054ad6c9003cd345"
+    }
+  ]
+}

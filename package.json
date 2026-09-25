@@ -1,0 +1,12 @@
+{
+  "name": "yamb-royal-navy-engineering",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node tests/rules.test.mjs && node tests/random.test.mjs && node tests/storage.test.mjs && node tests/package.test.mjs && node tests/syntax.test.mjs && node tests/integrity.test.mjs"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}
